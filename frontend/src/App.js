@@ -1,4 +1,5 @@
 import React from 'react';
+import Leaderboard from './Leaderboard'
 import './App.css';
 
 function App() {
@@ -77,27 +78,27 @@ function App() {
     }
   }
 
-  class Leaderboard extends React.Component {
-    render() {
-      const sampleScores = [{"score": 1000, "name": "Shannon"},{"score": 3434, "name": "Kira"},{"score": 1701, "name": "Squire"}]
-      return (
-        <div>
-          <h2>{this.props.headline}</h2>
-          <LeadboardList scores={sampleScores}/>
-        </div>
-      );
-    }
-  }
-
-  class LeadboardList extends React.Component {
-    render() {
-      return (
-        <ul>
-          {this.props.scores.map(item => <li>{item.score} - {item.name}</li>)}
-        </ul>
-      )
-    }
-  }
+  // class Leaderboard extends React.Component {
+  //   render() {
+  //     const sampleScores = [{"score": 1000, "name": "Shannon"},{"score": 3434, "name": "Kira"},{"score": 1701, "name": "Squire"}]
+  //     return (
+  //       <div>
+  //         <h2>{this.props.headline}</h2>
+  //         <LeadboardList scores={sampleScores}/>
+  //       </div>
+  //     );
+  //   }
+  // }
+  //
+  // class LeadboardList extends React.Component {
+  //   render() {
+  //     return (
+  //       <ul>
+  //         {this.props.scores.map(item => <li>{item.score} - {item.name}</li>)}
+  //       </ul>
+  //     )
+  //   }
+  // }
 
   class Footer extends React.Component {
     render() {
