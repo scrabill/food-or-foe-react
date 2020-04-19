@@ -1,5 +1,6 @@
 import React from 'react';
 import Leaderboard from './Leaderboard'
+import Gameboard from './Game/Gameboard'
 import './App.css';
 
 function App() {
@@ -28,55 +29,55 @@ function App() {
     }
   }
 
-  class Gameboard extends React.Component {
-    render() {
-      return (
-        <div>
-          <h3>Time Remaining: {this.props.currentTime}</h3>
-          <h3>Score: {this.props.currentScore}</h3>
-          <Emoji currentEmoji={"🍔"}/>
-
-          <br />
-
-          <Button text="Start Game"/>
-          <Button text="Food"/>
-          <Button text="Foe"/>
-
-          <PlayerInput />
-
-        </div>
-      );
-    }
-  }
-
-  class Button extends React.Component {
-    render() {
-      return (
-        <button>
-        {this.props.text}
-        </button>
-      );
-    }
-  }
-
-  class PlayerInput extends React.Component {
-    render() {
-      return (
-        <form>
-          <input type="text" placeholder="Enter player name" />
-          <input type="submit" />
-        </form>
-      );
-    }
-  }
-
-  class Emoji extends React.Component {
-    render() {
-      return (
-        <span>{this.props.currentEmoji}</span>
-      );
-    }
-  }
+  // class Gameboard extends React.Component {
+  //   render() {
+  //     return (
+  //       <div>
+  //         <h3>Time Remaining: {this.props.currentTime}</h3>
+  //         <h3>Score: {this.props.currentScore}</h3>
+  //         <Emoji currentEmoji={"🍔"}/>
+  //
+  //         <br />
+  //
+  //         <Button text="Start Game"/>
+  //         <Button text="Food"/>
+  //         <Button text="Foe"/>
+  //
+  //         <PlayerInput />
+  //
+  //       </div>
+  //     );
+  //   }
+  // }
+  //
+  // class Button extends React.Component {
+  //   render() {
+  //     return (
+  //       <button>
+  //       {this.props.text}
+  //       </button>
+  //     );
+  //   }
+  // }
+  //
+  // class PlayerInput extends React.Component {
+  //   render() {
+  //     return (
+  //       <form>
+  //         <input type="text" placeholder="Enter player name" />
+  //         <input type="submit" />
+  //       </form>
+  //     );
+  //   }
+  // }
+  //
+  // class Emoji extends React.Component {
+  //   render() {
+  //     return (
+  //       <span>{this.props.currentEmoji}</span>
+  //     );
+  //   }
+  // }
 
   // class Leaderboard extends React.Component {
   //   render() {
