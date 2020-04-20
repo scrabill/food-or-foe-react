@@ -3,35 +3,54 @@ import Emoji from './Emoji'
 import Button from './Button'
 import PlayerInput from './PlayerInput'
 
-export default class Gameboard extends React.Component {
+import { connect } from 'react-redux'
 
-    constructor(props) {
-      super(props);
-      this.state = {
-        currentTime: 30,
-        currentScore: 0,
-        currentEmoji: "🍔",
-        activeGame: true
-      }
-    }
+class Gameboard extends React.Component {
+
+    // constructor(props) {
+    //   super(props);
+    //   this.state = {
+        // currentTime: 30,
+        // currentScore: 0,
+        // currentEmoji: "🍔",
+        // activeGame: false
+    //   }
+    // }
 
     render() {
       return (
         <div>
-          <h3>Time Remaining: {this.state.currentTime}</h3>
-          <h3>Score: {this.state.currentScore}</h3>
-          <Emoji currentEmoji={this.state.currentEmoji}/>
+          <h3>Time Remaining: {this.props.currentTime}</h3>
+          <h3>Score: {this.props.currentScore}</h3>
+          <Emoji currentEmoji={this.props.currentEmoji}/>
 
           <br />
 
-          <Button text="Start Game"/>
-          <Button text="Food" activeGame={this.state.activeGame}/>
+          <Button text="Start Game" startGame={this.props.startGame}/>
+          <Button text="Food"/>
           <Button text="Foe"/>
 
-          <PlayerInput activeGame={this.state.activeGame} />
+          <PlayerInput />
 
         </div>
       );
     }
 
 }
+
+const mapStateToProps = state => {
+  return {
+    currentTime: state.currentTime,
+    currentScore: state.currentScore,
+    currentEmoji: state.currentEmoji,
+    activeGame: state.activeGame
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    startGame: () => dispatch({ type: 'START_GAME' })
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Gameboard);
