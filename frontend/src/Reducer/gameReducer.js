@@ -9,7 +9,13 @@ export default function gameReducer(state = {
         console.log("The game has started")
         return {
           ...state,
-          activeGame: !state.activeGame
+          activeGame: true
+        }
+    case "SAVE_SCORE":
+        console.log("Saving your score")
+        return {
+          ...state,
+          playerName: action.name
         }
     default:
       return state

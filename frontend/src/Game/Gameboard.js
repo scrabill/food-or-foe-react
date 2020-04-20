@@ -30,7 +30,7 @@ class Gameboard extends React.Component {
           <Button text="Food"/>
           <Button text="Foe"/>
 
-          <PlayerInput />
+          <PlayerInput saveScore={this.props.saveScore} currentScore={this.props.currentScore} />
 
         </div>
       );
@@ -49,7 +49,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    startGame: () => dispatch({ type: 'START_GAME' })
+    startGame: () => dispatch({ type: 'START_GAME' }),
+    saveScore: () => dispatch({ type: 'SAVE_SCORE' })
   }
 }
 
