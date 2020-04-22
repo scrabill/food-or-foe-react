@@ -2,6 +2,7 @@ import React from 'react';
 import Leaderboard from './Leaderboard'
 import Gameboard from './Game/Gameboard'
 import './App.css';
+import { BrowserRouter as Router, Route, NavLink} from 'react-router-dom'
 
 function App() {
 
@@ -9,7 +10,22 @@ function App() {
     render() {
       return (
         <div>
-          How to Play | Leaderboard
+          <NavLink to="/">Home</NavLink> |
+          <NavLink to="/about">About</NavLink> |
+          <NavLink to="/how-to-play">How to Play</NavLink> |
+          <NavLink to="/leaderboard">Leaderboard</NavLink>
+        </div>
+      );
+    }
+  }
+
+  // TODO: Abstract About and Instruction into a shared component
+  class About extends React.Component {
+    render() {
+      return (
+        <div>
+          <h2>About</h2>
+          <p>This game is rad and I think you should play it.</p>
         </div>
       );
     }
@@ -19,7 +35,7 @@ function App() {
     render() {
       return (
         <div>
-          <h2>{this.props.headline}</h2>
+          <h2>How To Play</h2>
           <p>How many food emoji can you correctly identify in 30 seconds?</p>
           <p>Each correct answer is worth 1 point. A wrong answer decreases your score by 1 point.</p>
           <p>At the end of a round, add your name and score to the leaderboard!</p>
@@ -33,7 +49,7 @@ function App() {
     render() {
       return (
         <div>
-          Github | Blog Post
+          <em>Food or Foe?</em> created by Shannon Crabill
         </div>
       )
     }
@@ -41,11 +57,15 @@ function App() {
 
   return (
     <div className="App">
-      <Nav />
-      <Instruction headline="How to Play" />
-      <Gameboard currentTime="30" currentScore="0" />
-      <Leaderboard headline="Leaderboard" />
-      <Footer />
+      <Router>
+        <Nav />
+        <Route exact path="/" component={Gameboard}/>
+        <Route exact path="/about" component={About} />
+        <Route exact path="/how-to-play" component={Instruction} />
+        <Route exact path="/leaderboard" component={Leaderboard} />
+        <Footer />
+      </Router>
+
     </div>
   );
 }
