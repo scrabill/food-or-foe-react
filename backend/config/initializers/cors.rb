@@ -5,9 +5,10 @@
 
 # Read more: https://github.com/cyu/rack-cors
 
+# Origins can be changed if your local port is different. A wildcard "*" will also works
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins 'example.com'
+    origins 'localhost:3006'
 
     resource '*',
       headers: :any,
