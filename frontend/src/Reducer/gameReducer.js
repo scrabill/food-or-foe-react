@@ -24,6 +24,12 @@ export default function gameReducer(state = {
           ...state,
           scores: action.scores
         }
+    case "GUESS":
+        console.log("Calculating guess")
+        return {
+          ...state,
+          scores: action.scores
+        }
     default:
       return state
   }
