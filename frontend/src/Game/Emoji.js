@@ -7,12 +7,17 @@ class Emoji extends React.Component {
   componentDidMount() {
     let emojis = []
 
-    fetch('http://localhost:3000/api/v1/emojis')
-    .then(r => r.json())
-    .then(r => {
-      r.forEach(element => emojis.push(element))
-      this.props.loadEmojis(emojis)
-    })
+    // If there are already emojis in the array, don't load them from the API again
+    if (this.props.emojis.length === 0) {
+      fetch('http://localhost:3000/api/v1/emojis')
+      .then(r => r.json())
+      .then(r => {
+        r.forEach(element => emojis.push(element))
+        this.props.loadEmojis(emojis)
+      })
+    }
+
+
   }
 
   displayEmoji() {
