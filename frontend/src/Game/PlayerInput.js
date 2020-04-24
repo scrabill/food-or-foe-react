@@ -6,6 +6,18 @@ export default class PlayerInput extends React.Component {
     playerName: ''
   }
 
+  // Update to store URL as a global variable
+  createGame(gameObj) {
+    fetch("http://localhost:3000/api/v1/games", {
+      method: 'POST',
+      headers: {
+         'content-type': 'application/json'
+      },
+      body: JSON.stringify(gameObj)
+    })
+    .then(res => res.json())
+  }
+
   handleOnChange = (e) => {
     this.setState({
       playerName: e.target.value
@@ -14,12 +26,14 @@ export default class PlayerInput extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.props.currentScore)
+
     let gameObj = {
       score: this.props.currentScore,
-      name: e.target.value
+      name: this.state.playerName
     }
+
     this.props.saveScore(gameObj)
+    this.createGame(gameObj)
 
     this.setState({
       playerName: ''

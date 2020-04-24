@@ -50,7 +50,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     startGame: () => dispatch({ type: 'START_GAME' }),
-    saveScore: () => dispatch({ type: 'SAVE_SCORE' })
+    saveScore: (name, score) => dispatch({ type: 'SAVE_SCORE', name, score })
   }
 }
 
