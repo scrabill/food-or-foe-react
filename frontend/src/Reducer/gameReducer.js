@@ -3,7 +3,8 @@ export default function gameReducer(state = {
   currentScore: 0,
   currentEmoji: "🍔",
   activeGame: false,
-  scores: []
+  scores: [],
+  emojis: []
 }, action) {
   switch (action.type) {
     case "START_GAME":
@@ -24,6 +25,12 @@ export default function gameReducer(state = {
         return {
           ...state,
           scores: action.scores
+        }
+    case "LOAD_EMOJIS":
+        console.log("Loading emojis")
+        return {
+          ...state,
+          emojis: action.emojis
         }
     case "GUESS":
         console.log("Calculating guess")
