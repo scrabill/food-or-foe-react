@@ -10,6 +10,7 @@ export default function gameReducer(state = {
         console.log("The game has started")
         return {
           ...state,
+          currentTime: 30,
           activeGame: true
         }
     case "SAVE_SCORE":
@@ -31,10 +32,15 @@ export default function gameReducer(state = {
           scores: action.scores
         }
     case 'SET_TIME':
-        return {
-          ...state,
-          currentTime: state.currentTime - 1
+        if (state.currentTime >= 1) {
+          return {
+            ...state,
+            currentTime: state.currentTime - 1
+          }
+        } else {
+          return state
         }
+
     default:
       return state
   }
