@@ -26,7 +26,7 @@ class Gameboard extends React.Component {
 
           <br />
 
-          <Button text="Start Game" startGame={this.props.startGame}/>
+          <Button text="Start Game" startGame={this.props.startGame} setTime={this.props.setTime} currentTime={this.props.currentTime}/>
           <Button text="Food" guess={this.props.guess}/>
           <Button text="Foe" guess={this.props.guess}/>
 
@@ -51,7 +51,8 @@ const mapDispatchToProps = dispatch => {
   return {
     startGame: () => dispatch({ type: 'START_GAME' }),
     saveScore: (name, score) => dispatch({ type: 'SAVE_SCORE', name, score }),
-    guess: (guess) => dispatch({ type: 'GUESS', guess})
+    guess: (guess) => dispatch({ type: 'GUESS', guess}),
+    setTime: () => dispatch({ type: 'SET_TIME'}),
   }
 }
 

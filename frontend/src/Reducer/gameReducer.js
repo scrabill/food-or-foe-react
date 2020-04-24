@@ -30,6 +30,11 @@ export default function gameReducer(state = {
           ...state,
           scores: action.scores
         }
+    case 'SET_TIME':
+        return {
+          ...state,
+          currentTime: state.currentTime - 1
+        }
     default:
       return state
   }

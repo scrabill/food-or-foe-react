@@ -1,11 +1,27 @@
 import React from 'react'
 
 export default class Button extends React.Component {
+  startGame() {
+    this.props.startGame()
+    this.startTimer()
+  }
+
+  startTimer() {
+    let time = this.props.currentTime
+    const runTimer = this.props.setTime.bind(this)
+
+    let printTime = setInterval(function() {
+        time--;
+        runTimer()
+        if (time <= 0) clearInterval(printTime);
+    }, 1000);
+  }
+
   handleClick = (e) => {
     console.log(e.target.innerText);
     switch (e.target.innerText) {
       case "Start Game":
-        this.props.startGame();
+        this.startGame();
         break;
       case "Food":
         console.log("The food button was clicked");
