@@ -2,7 +2,8 @@ export default function gameReducer(state = {
   currentTime: 30,
   currentScore: 0,
   currentEmoji: "🍔",
-  activeGame: false
+  activeGame: false,
+  scores: []
 }, action) {
   switch (action.type) {
     case "START_GAME":
@@ -16,6 +17,12 @@ export default function gameReducer(state = {
         return {
           ...state,
           playerName: action.name
+        }
+    case "LOAD_SCORES":
+        console.log("Loading scores")
+        return {
+          ...state,
+          scores: action.scores
         }
     default:
       return state
