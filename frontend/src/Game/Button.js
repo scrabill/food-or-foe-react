@@ -1,4 +1,5 @@
 import React from 'react'
+import { randomEmoji } from './Emoji'
 
 export default class Button extends React.Component {
   startGame() {
@@ -43,6 +44,9 @@ export default class Button extends React.Component {
         console.log("Wrong :(")
       }
     }
+
+    // Randomly get a new emoji and make it the currentEmoji
+    this.props.updateEmoji(randomEmoji(this.props.emojis).character)
 
   }
 

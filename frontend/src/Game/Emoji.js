@@ -2,6 +2,12 @@ import React from 'react'
 
 import { connect } from 'react-redux'
 
+export const randomEmoji = (emojis) => {
+  return (
+    emojis[Math.floor(Math.random() * emojis.length)]
+  )
+}
+
 class Emoji extends React.Component {
 
   componentDidMount() {
@@ -34,9 +40,6 @@ class Emoji extends React.Component {
     console.log(this.props.currentEmoji)
   }
 
-  randomEmoji() {
-    this.props.currentEmoji = this.props.emojis[Math.floor(Math.random() * this.props.emojis.length)]
-  }
 
   render() {
     return (
@@ -55,8 +58,19 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     loadEmojis: (emojis) => dispatch({ type: 'LOAD_EMOJIS', emojis}),
-    loadFoodEmojis: (foodEmojis) => dispatch({ type: 'LOAD_FOOD_EMOJIS', foodEmojis})
+    loadFoodEmojis: (foodEmojis) => dispatch({ type: 'LOAD_FOOD_EMOJIS', foodEmojis}),
+    updateEmoji: (emoji) => dispatch({ type: 'UPDATE_EMOJI', emoji}),
   }
 }
+
+// export const randomEmoji = () => {
+//   // console.log(props)
+//   let emojis = this.props.emojis.bind(this)
+//   // console.log(this.emojis)
+//
+//   return (
+//     emojis[Math.floor(Math.random() * emojis.length)]
+//   )
+// }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Emoji);

@@ -50,6 +50,12 @@ export default function gameReducer(state = {
           ...state,
           foodEmojis: action.foodEmojis
         }
+    case "UPDATE_EMOJI":
+        console.log("Emoji machine go brrrr")
+        return {
+          ...state,
+          currentEmoji: action.emoji
+        }
     case "GUESS":
         console.log("Calculating guess")
         return {
