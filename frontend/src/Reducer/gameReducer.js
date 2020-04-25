@@ -26,6 +26,17 @@ export default function gameReducer(state = {
           ...state,
           scores: action.scores
         }
+    case "UPDATE_SCORE":
+
+      if (state.currentScore + action.point < 0) {
+        state.currentScore = 0
+      } else {
+        return {
+          ...state,
+          currentScore: state.currentScore + action.point
+        }
+      }
+
     case "LOAD_EMOJIS":
         console.log("Loading emojis")
         return {
