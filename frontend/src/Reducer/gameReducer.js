@@ -1,5 +1,5 @@
 export default function gameReducer(state = {
-  currentTime: 30,
+  currentTime: 0,
   currentScore: 0,
   currentEmoji: "🍔",
   activeGame: false,
