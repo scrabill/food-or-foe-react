@@ -17,6 +17,36 @@ export default class Button extends React.Component {
     }, 1000);
   }
 
+  makeAGuess(myGuess) {
+
+    let isFood = this.props.foodEmojis.includes(this.props.currentEmoji);
+
+    console.log("The current emojis is " + this.props.currentEmoji + " I guessed that it is " + myGuess + ". It is " + isFood + " that it is food.")
+
+    if (isFood == true) {
+
+      if (myGuess == "Food") {
+        this.props.updateScore(1)
+        console.log("Correct!")
+      } else {
+        this.props.updateScore(-1)
+        console.log("Wrong :(")
+      }
+
+    } else {
+
+      if (myGuess == "Foe") {
+        this.props.updateScore(1)
+        console.log("Correct")
+      } else {
+        this.props.updateScore(-1)
+        console.log("Wrong :(")
+      }
+    }
+
+  }
+
+
   handleClick = (e) => {
     console.log(e.target.innerText);
     switch (e.target.innerText) {
@@ -25,11 +55,11 @@ export default class Button extends React.Component {
         break;
       case "Food":
         console.log("The food button was clicked");
-        this.props.guess(e.target.innerText);
+        this.makeAGuess(e.target.innerText);
         break;
       case "Foe":
         console.log("The foe button was clicked");
-        this.props.guess(e.target.innerText);
+        this.makeAGuess(e.target.innerText);
         break;
       default:
         // this.props.startGame();

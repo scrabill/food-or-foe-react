@@ -6,6 +6,7 @@ class Emoji extends React.Component {
 
   componentDidMount() {
     let emojis = []
+    let foodEmojis = []
 
     // If there are already emojis in the array, don't load them from the API again
     if (this.props.emojis.length === 0) {
@@ -14,6 +15,15 @@ class Emoji extends React.Component {
       .then(r => {
         r.forEach(element => emojis.push(element))
         this.props.loadEmojis(emojis)
+      })
+    }
+
+    if (this.props.foodEmojis.length === 0) {
+      fetch('http://localhost:3000/api/v1/emojis/food')
+      .then(r => r.json())
+      .then(r => {
+        r.forEach(element => foodEmojis.push(element.character))
+        this.props.loadFoodEmojis(foodEmojis)
       })
     }
 
@@ -37,13 +47,15 @@ class Emoji extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    emojis: state.emojis
+    emojis: state.emojis,
+    foodEmojis: state.foodEmojis
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    loadEmojis: (emojis) => dispatch({ type: 'LOAD_EMOJIS', emojis})
+    loadEmojis: (emojis) => dispatch({ type: 'LOAD_EMOJIS', emojis}),
+    loadFoodEmojis: (foodEmojis) => dispatch({ type: 'LOAD_FOOD_EMOJIS', foodEmojis})
   }
 }
 
