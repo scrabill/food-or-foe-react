@@ -1,6 +1,7 @@
 import React from 'react'
 import Emoji from './Emoji'
 import Button from './Button'
+import Timer from './Timer'
 import PlayerInput from './PlayerInput'
 
 import { connect } from 'react-redux'
@@ -20,7 +21,7 @@ class Gameboard extends React.Component {
     render() {
       return (
         <div>
-          <h3>Time Remaining: {this.props.currentTime}</h3>
+          <Timer currentTime={this.props.currentTime} activeGame={this.props.activeGame} setTime={this.props.setTime}/>
           <h3>Score: {this.props.currentScore}</h3>
           <Emoji currentEmoji={this.props.currentEmoji} emojis={this.props.emojis}/>
 

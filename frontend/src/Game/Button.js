@@ -4,19 +4,19 @@ import { randomEmoji } from './Emoji'
 export default class Button extends React.Component {
   startGame() {
     this.props.startGame()
-    this.startTimer()
+    // this.startTimer()
   }
 
-  startTimer() {
-    let time = this.props.currentTime
-    const runTimer = this.props.setTime.bind(this)
-
-    let printTime = setInterval(function() {
-        time--;
-        runTimer()
-        if (time <= 0) clearInterval(printTime);
-    }, 1000);
-  }
+  // startTimer() {
+  //   let time = this.props.currentTime
+  //   const runTimer = this.props.setTime.bind(this)
+  //
+  //   let printTime = setInterval(function() {
+  //       time--;
+  //       runTimer()
+  //       if (time <= 0) clearInterval(printTime);
+  //   }, 1000);
+  // }
 
   makeAGuess(myGuess) {
 
