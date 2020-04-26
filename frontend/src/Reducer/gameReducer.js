@@ -4,8 +4,11 @@ export default function gameReducer(state = {
   currentEmoji: "🍔",
   activeGame: false,
   scores: [],
+  loadingScores: false,
   emojis: [],
-  foodEmojis: []
+  loadingEmojis: false,
+  foodEmojis: [],
+  loadingFoodEmojis: false,
 }, action) {
   switch (action.type) {
     case "START_GAME":
@@ -21,11 +24,19 @@ export default function gameReducer(state = {
           ...state,
           playerName: action.name
         }
+    case "LOADING_SCORES":
+        console.log("Loading scores")
+        return {
+          ...state,
+          scores: state.scores,
+          loadingScores: true
+        }
     case "LOAD_SCORES":
         console.log("Loading scores")
         return {
           ...state,
-          scores: action.scores
+          scores: action.scores,
+          loadingScores: false
         }
     case "UPDATE_SCORE":
 
@@ -37,18 +48,30 @@ export default function gameReducer(state = {
           currentScore: state.currentScore + action.point
         }
       }
-
-    case "LOAD_EMOJIS":
-        console.log("Loading emojis")
+    case "LOADING_EMOJIS":
         return {
           ...state,
-          emojis: action.emojis
+          emojis: state.emojis,
+          loadingEmojis: true
+        }
+    case "LOAD_EMOJIS":
+        return {
+          ...state,
+          emojis: action.emojis,
+          loadingEmojis: false
+        }
+    case "LOADING_FOOD_EMOJIS":
+        return {
+          ...state,
+          foodEmojis: state.foodEmojis,
+          loadingFoodEmojis: true
         }
     case "LOAD_FOOD_EMOJIS":
         console.log("Loading emojis")
         return {
           ...state,
-          foodEmojis: action.foodEmojis
+          foodEmojis: action.foodEmojis,
+          loadingFoodEmojis: false
         }
     case "UPDATE_EMOJI":
         console.log("Emoji machine go brrrr")

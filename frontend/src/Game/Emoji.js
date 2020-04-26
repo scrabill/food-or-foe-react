@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { fetchEmojis, fetchFoodEmojis } from '../Actions/emojiActions'
 import { connect } from 'react-redux'
 
 export const randomEmoji = (emojis) => {
@@ -11,29 +12,8 @@ export const randomEmoji = (emojis) => {
 class Emoji extends React.Component {
 
   componentDidMount() {
-    let emojis = []
-    let foodEmojis = []
-
-    // If there are already emojis in the array, don't load them from the API again
-    if (this.props.emojis.length === 0) {
-      fetch('http://localhost:3000/api/v1/emojis')
-      .then(r => r.json())
-      .then(r => {
-        r.forEach(element => emojis.push(element))
-        this.props.loadEmojis(emojis)
-      })
-    }
-
-    if (this.props.foodEmojis.length === 0) {
-      fetch('http://localhost:3000/api/v1/emojis/food')
-      .then(r => r.json())
-      .then(r => {
-        r.forEach(element => foodEmojis.push(element.character))
-        this.props.loadFoodEmojis(foodEmojis)
-      })
-    }
-
-
+    this.props.fetchEmojis()
+    this.props.fetchFoodEmojis()
   }
 
   displayEmoji() {
@@ -51,14 +31,16 @@ class Emoji extends React.Component {
 const mapStateToProps = state => {
   return {
     emojis: state.emojis,
-    foodEmojis: state.foodEmojis
+    loadEmojis: state.loadingEmojis,
+    foodEmojis: state.foodEmojis,
+    loadingFoodEmojis: state.loadingFoodEmojis
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    loadEmojis: (emojis) => dispatch({ type: 'LOAD_EMOJIS', emojis}),
-    loadFoodEmojis: (foodEmojis) => dispatch({ type: 'LOAD_FOOD_EMOJIS', foodEmojis}),
+    fetchEmojis: () => dispatch(fetchEmojis()),
+    fetchFoodEmojis: () => dispatch(fetchFoodEmojis()),
     updateEmoji: (emoji) => dispatch({ type: 'UPDATE_EMOJI', emoji}),
   }
 }
