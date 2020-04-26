@@ -21,7 +21,7 @@ export const fetchFoodEmojis = () => {
       return r.json()
     })
     .then(rJSON => {
-      dispatch({ type: 'LOAD_FOOD_EMOJIS', foodEmojis: rJSON })
+      dispatch({ type: 'LOAD_FOOD_EMOJIS', foodEmojis: rJSON.map(emoji => emoji.character) })
     })
   }
 }
