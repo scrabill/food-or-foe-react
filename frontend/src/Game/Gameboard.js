@@ -28,10 +28,10 @@ class Gameboard extends React.Component {
           <br />
 
           <Button text="Start Game" startGame={this.props.startGame} setTime={this.props.setTime} currentTime={this.props.currentTime}/>
-          <Button text="Food" guess={this.props.guess} emojis={this.props.emojis} foodEmojis={this.props.foodEmojis} currentEmoji={this.props.currentEmoji} updateScore={this.props.updateScore} updateEmoji={this.props.updateEmoji}/>
-          <Button text="Foe" guess={this.props.guess} emojis={this.props.emojis} foodEmojis={this.props.foodEmojis} currentEmoji={this.props.currentEmoji} updateScore={this.props.updateScore} updateEmoji={this.props.updateEmoji}/>
+          <Button text="Food" guess={this.props.guess} emojis={this.props.emojis} foodEmojis={this.props.foodEmojis} currentEmoji={this.props.currentEmoji} updateScore={this.props.updateScore} updateEmoji={this.props.updateEmoji} activeGame={this.props.activeGame}/>
+          <Button text="Foe" guess={this.props.guess} emojis={this.props.emojis} foodEmojis={this.props.foodEmojis} currentEmoji={this.props.currentEmoji} updateScore={this.props.updateScore} updateEmoji={this.props.updateEmoji} activeGame={this.props.activeGame}/>
 
-          <PlayerInput saveScore={this.props.saveScore} currentScore={this.props.currentScore} />
+          <PlayerInput saveScore={this.props.saveScore} currentScore={this.props.currentScore} activeGame={this.props.activeGame}/>
 
         </div>
       );

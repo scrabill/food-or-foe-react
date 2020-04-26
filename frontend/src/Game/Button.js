@@ -72,8 +72,14 @@ export default class Button extends React.Component {
   }
 
   render() {
+    let disabled = ''
+
+    if (this.props.text !== "Start Game" && this.props.activeGame == false) {
+      disabled = true
+    }
+
     return (
-      <button onClick={(e) => this.handleClick(e)}>
+      <button onClick={(e) => this.handleClick(e)} disabled={disabled}>
       {this.props.text}
       </button>
     );

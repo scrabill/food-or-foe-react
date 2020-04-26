@@ -43,10 +43,16 @@ export default class PlayerInput extends React.Component {
 
 
   render() {
+    let disabled = ''
+
+    if (this.props.activeGame == false) {
+      disabled = true
+    }
+
     return (
       <form onSubmit={this.handleSubmit}>
-        <input type="text" placeholder="Enter player name" value={this.state.playerName} onChange={this.handleOnChange} />
-        <input type="submit" />
+        <input type="text" placeholder="Enter player name" value={this.state.playerName} onChange={this.handleOnChange} disabled={disabled} />
+        <input type="submit" disabled={disabled}/>
       </form>
     );
   }
