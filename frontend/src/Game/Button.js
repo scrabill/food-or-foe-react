@@ -52,7 +52,7 @@ export default class Button extends React.Component {
 
 
   handleClick = (e) => {
-    console.log(e.target.innerText);
+    console.log(e);
     switch (e.target.innerText) {
       case "Start Game":
         this.startGame();

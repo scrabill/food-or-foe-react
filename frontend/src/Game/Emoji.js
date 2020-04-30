@@ -23,7 +23,7 @@ class Emoji extends React.Component {
 
   render() {
     return (
-      <span>{this.props.currentEmoji}</span>
+      <h1>{this.props.currentEmoji}</h1>
     );
   }
 }

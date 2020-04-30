@@ -1,5 +1,5 @@
 import React from 'react'
-import LeaderboardList from './LeaderboardList'
+import { LeaderboardList } from './LeaderboardList'
 import { fetchScores } from './Actions/scoreActions'
 
 import { connect } from 'react-redux'
