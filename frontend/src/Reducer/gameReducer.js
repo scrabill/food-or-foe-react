@@ -15,6 +15,7 @@ export default function gameReducer(state = {
         console.log("The game has started")
         return {
           ...state,
+          currentScore: 0,
           currentTime: 30,
           activeGame: true
         }
@@ -22,7 +23,8 @@ export default function gameReducer(state = {
         console.log("Saving your score")
         return {
           ...state,
-          playerName: action.name
+          playerName: action.name,
+          currentScore: 0
         }
     case "LOADING_SCORES":
         console.log("Loading scores")
@@ -92,7 +94,11 @@ export default function gameReducer(state = {
             currentTime: state.currentTime - 1
           }
         } else {
-          return state
+          return {
+            ...state,
+            currentTime: 0,
+            activeGame: false
+          }
         }
 
     default:
