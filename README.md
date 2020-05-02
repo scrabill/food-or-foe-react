@@ -35,7 +35,7 @@ To play, open `http://localhost:3006` in a browser.
 
 ## API Endpoints
 
-Food or Foe? has three models, each of which can be accessed at the following endpoints.
+_Food or Foe?_ has three models, each of which can be accessed at the following endpoints.
 
 - http://localhost:3000/api/v1/users
 - http://localhost:3000/api/v1/games
@@ -46,7 +46,7 @@ Food or Foe? has three models, each of which can be accessed at the following en
 
 Is this game missing your favorite emoji?
 
-To contribute, please make a pull request with at least the name of the emoji, it's character and if it is a food or not to the backend/db/seeds.rb file.
+To contribute, please [make a pull request](https://github.com/scrabill/food-or-foe-react/pull/new/master) with the name of the emoji, it's character and if it is a food or not to the [backend/db/seeds.rb](https://github.com/scrabill/food-or-foe-react/blob/master/backend/db/seeds.rb) file.
 
 Here's how I would add 🍔 (hamburger)
 
@@ -54,7 +54,11 @@ Here's how I would add 🍔 (hamburger)
 Emoji.create(slug: "hamburger", character: "🍔", is_food?: true)
 ```
 
-If you encounter any bugs or glitches while playing, please open an issue so that I can look into finding a fix.
+The [Unicode emoji list](https://unicode.org/emoji/charts/emoji-list.html) is a great resource for finding interesting emojis to contribute.
+
+## Bugs
+
+If you encounter any bugs or glitches while playing, please [open an issue](https://github.com/scrabill/food-or-foe-react/issues/new/choose) so that I can look into finding a fix.
 
 ## Misc
 
