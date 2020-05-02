@@ -45,7 +45,7 @@ export default class PlayerInput extends React.Component {
   render() {
     let disabled = ''
 
-    if (this.props.activeGame == true || this.props.currentScore == 0) {
+    if (this.props.activeGame === true || this.props.currentScore === 0) {
       disabled = true
     }
 

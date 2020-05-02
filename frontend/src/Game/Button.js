@@ -24,9 +24,9 @@ export default class Button extends React.Component {
 
     console.log("The current emojis is " + this.props.currentEmoji + " I guessed that it is " + myGuess + ". It is " + isFood + " that it is food.")
 
-    if (isFood == true) {
+    if (isFood === true) {
 
-      if (myGuess == "Food") {
+      if (myGuess === "Food") {
         this.props.updateScore(1)
         console.log("Correct!")
       } else {
@@ -36,7 +36,7 @@ export default class Button extends React.Component {
 
     } else {
 
-      if (myGuess == "Foe") {
+      if (myGuess === "Foe") {
         this.props.updateScore(1)
         console.log("Correct")
       } else {
@@ -74,7 +74,7 @@ export default class Button extends React.Component {
   render() {
     let disabled = ''
 
-    if (this.props.text !== "Start Game" && this.props.activeGame == false) {
+    if (this.props.text !== "Start Game" && this.props.activeGame === false) {
       disabled = true
     }
 

@@ -18,7 +18,7 @@ export default class Timer extends React.Component {
     }
 
   render() {
-    if (this.props.activeGame == true)  {
+    if (this.props.activeGame === true)  {
       return (
         <h3>
           This is the time: {this.props.currentTime}
