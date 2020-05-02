@@ -1,5 +1,7 @@
 # Food or Foe?
 
+![Screenshot of Food or Foe?](frontend/public/screenshot.png)
+
 How many food emoji can you correctly identify in 30 seconds?
 
 Each correct answer is worth 1 point. A wrong answer decreases your score by 1 point.
