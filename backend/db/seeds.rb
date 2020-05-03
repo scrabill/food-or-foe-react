@@ -25,6 +25,11 @@ Emoji.create(slug: "carrot", character: "🥕", is_food?: true)
 Emoji.create(slug: "croissant", character: "🥐", is_food?: true)
 Emoji.create(slug: "pancakes", character: "🥞", is_food?: true)
 Emoji.create(slug: "banana", character: "🍌", is_food?: true)
+Emoji.create(slug: "hot dog", character: "🌭", is_food?: true)
+Emoji.create(slug: "salad", character: "🥗", is_food?: true)
+Emoji.create(slug: "poultry leg", character: "🍗", is_food?: true)
+Emoji.create(slug: "popcorn", character: "🍿", is_food?: true)
+Emoji.create(slug: "burrito", character: "🌯", is_food?: true)
 
 # Creates foe emojis...please do not eat them
 Emoji.create(slug: "rocket ship", character: "🚀", is_food?: false)
@@ -42,6 +47,11 @@ Emoji.create(slug: "alarm clock", character: "⏰", is_food?: false)
 Emoji.create(slug: "magnifying glass", character: "🔍", is_food?: false)
 Emoji.create(slug: "abacus", character: "🧮", is_food?: false)
 Emoji.create(slug: "gem stone", character: "💎", is_food?: false)
+Emoji.create(slug: "magnet", character: "🧲", is_food?: false)
+Emoji.create(slug: "package", character: "📦", is_food?: false)
+Emoji.create(slug: "yarn", character: "🧶", is_food?: false)
+Emoji.create(slug: "crystal ball", character: "🔮", is_food?: false)
+Emoji.create(slug: "firecracker", character: "🧨", is_food?: false)
 
 # Creates some games and scores to populate the leaderboard
 5.times do
