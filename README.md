@@ -58,6 +58,16 @@ Emoji.create(slug: "hamburger", character: "🍔", is_food?: true)
 
 The [Unicode emoji list](https://unicode.org/emoji/charts/emoji-list.html) is a great resource for finding interesting emojis to contribute.
 
+## Future Enhancements
+
+- Host on Heroku
+- Limit leaderboard to top 10–20 scores
+- HARD MODE - One wrong guess and the game is over
+- Player feedback - Good job! Missing one! 3x in a row (multiplier!)
+- Testing most - 3 second timer
+- Accept keyboard inputs for Food or Foe buttons
+- Error messaging
+
 ## Bugs
 
 If you encounter any bugs or glitches while playing, please [open an issue](https://github.com/scrabill/food-or-foe-react/issues/new/choose) so that I can look into finding a fix.
