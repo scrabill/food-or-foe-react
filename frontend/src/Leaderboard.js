@@ -11,7 +11,6 @@ class Leaderboard extends React.Component {
   }
 
   render() {
-    // const sampleScores = [{"score": 1000, "name": "Shannon"},{"score": 3434, "name": "Kira"},{"score": 1701, "name": "Squire"}]
     if (this.props.loadingScores === true) {
       return (
         <div>

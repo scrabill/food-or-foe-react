@@ -45,14 +45,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-// export const randomEmoji = () => {
-//   // console.log(props)
-//   let emojis = this.props.emojis.bind(this)
-//   // console.log(this.emojis)
-//
-//   return (
-//     emojis[Math.floor(Math.random() * emojis.length)]
-//   )
-// }
-
 export default connect(mapStateToProps, mapDispatchToProps)(Emoji);

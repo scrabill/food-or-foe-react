@@ -8,16 +8,6 @@ import { connect } from 'react-redux'
 
 class Gameboard extends React.Component {
 
-    // constructor(props) {
-    //   super(props);
-    //   this.state = {
-        // currentTime: 30,
-        // currentScore: 0,
-        // currentEmoji: "🍔",
-        // activeGame: false
-    //   }
-    // }
-
     render() {
       return (
         <div>
