@@ -64,9 +64,12 @@ The [Unicode emoji list](https://unicode.org/emoji/charts/emoji-list.html) is a 
 - Limit leaderboard to top 10–20 scores
 - HARD MODE - One wrong guess and the game is over
 - Player feedback - Good job! Missing one! 3x in a row (multiplier!)
-- Testing most - 3 second timer
+- Testing mode - 3 second timer instead of 30 seconds
 - Accept keyboard inputs for Food or Foe buttons
 - Error messaging
+- Continuous deployment
+- Is this game accessible?
+- Improve mobile rendering
 
 ## Bugs
 
