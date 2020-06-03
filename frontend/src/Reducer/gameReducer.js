@@ -76,7 +76,6 @@ export default function gameReducer(state = {
           loadingFoodEmojis: false
         }
     case "UPDATE_EMOJI":
-        console.log("Emoji machine go brrrr")
         return {
           ...state,
           currentEmoji: action.emoji

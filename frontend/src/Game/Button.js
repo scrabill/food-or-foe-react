@@ -10,7 +10,7 @@ export default class Button extends React.Component {
 
     let isFood = this.props.foodEmojis.includes(this.props.currentEmoji);
 
-    console.log("The current emojis is " + this.props.currentEmoji + " I guessed that it is " + myGuess + ". It is " + isFood + " that it is food.")
+    // console.log("The current emojis is " + this.props.currentEmoji + " I guessed that it is " + myGuess + ". It is " + isFood + " that it is food.")
 
     if (isFood === true) {
 
@@ -40,17 +40,14 @@ export default class Button extends React.Component {
 
 
   handleClick = (e) => {
-    console.log(e);
     switch (e.target.innerText) {
       case "Start Game":
         this.startGame();
         break;
       case "Food":
-        console.log("The food button was clicked");
         this.makeAGuess(e.target.innerText);
         break;
       case "Foe":
-        console.log("The foe button was clicked");
         this.makeAGuess(e.target.innerText);
         break;
       default:
