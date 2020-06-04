@@ -6,6 +6,8 @@ export default class Button extends React.Component {
     this.props.startGame()
   }
 
+  // TODO: Is there a cleaner way to execute this?
+
   feedback = (i) => {
     let feedback = document.querySelector("#feedback")
     let text = ''
@@ -14,6 +16,8 @@ export default class Button extends React.Component {
 
     feedback.innerText = text
   }
+
+  // TODO: Is there a cleaner way to execute this?
 
   makeAGuess(myGuess) {
 
@@ -27,22 +31,18 @@ export default class Button extends React.Component {
 
       if (myGuess === "Food") {
         this.props.updateScore(i)
-        console.log("Correct!")
       } else {
         i = -1
         this.props.updateScore(i)
-        console.log("Wrong :(")
       }
 
     } else {
 
       if (myGuess === "Foe") {
         this.props.updateScore(i)
-        console.log("Correct")
       } else {
         i = -1
         this.props.updateScore(i)
-        console.log("Wrong :(")
       }
     }
 
