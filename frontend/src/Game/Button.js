@@ -6,7 +6,18 @@ export default class Button extends React.Component {
     this.props.startGame()
   }
 
+  feedback = (i) => {
+    let feedback = document.querySelector("#feedback")
+    let text = ''
+
+    i > 0 ? text = "Correct!" : text = "Sorry, wrong guess :("
+
+    feedback.innerText = text
+  }
+
   makeAGuess(myGuess) {
+
+    let i = 1
 
     let isFood = this.props.foodEmojis.includes(this.props.currentEmoji);
 
@@ -15,24 +26,27 @@ export default class Button extends React.Component {
     if (isFood === true) {
 
       if (myGuess === "Food") {
-        this.props.updateScore(1)
+        this.props.updateScore(i)
         console.log("Correct!")
       } else {
-        this.props.updateScore(-1)
+        i = -1
+        this.props.updateScore(i)
         console.log("Wrong :(")
       }
 
     } else {
 
       if (myGuess === "Foe") {
-        this.props.updateScore(1)
+        this.props.updateScore(i)
         console.log("Correct")
       } else {
-        this.props.updateScore(-1)
+        i = -1
+        this.props.updateScore(i)
         console.log("Wrong :(")
       }
     }
 
+    this.feedback(i)
     // Randomly get a new emoji and make it the currentEmoji
     this.props.updateEmoji(randomEmoji(this.props.emojis).character)
 

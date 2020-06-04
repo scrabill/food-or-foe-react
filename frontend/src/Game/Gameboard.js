@@ -12,6 +12,7 @@ class Gameboard extends React.Component {
       return (
         <div>
           <Timer currentTime={this.props.currentTime} activeGame={this.props.activeGame} setTime={this.props.setTime}/>
+          <h3 id="feedback"></h3>
           <h3>Score: {this.props.currentScore}</h3>
           <Emoji currentEmoji={this.props.currentEmoji} emojis={this.props.emojis}/>
 
