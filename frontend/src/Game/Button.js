@@ -12,9 +12,23 @@ export default class Button extends React.Component {
     let feedback = document.querySelector("#feedback")
     let text = ''
 
-    i > 0 ? text = "Correct!" : text = "Sorry, wrong guess :("
+    const positive = [
+      "Correct!",
+      "Good job!",
+      "Woo! Good guess.",
+      "Right answer!",
+      "Correct. You're good at this!"
+    ]
 
-    feedback.innerText = text
+    const negative = [
+      "Sorry, wrong guess :(",
+      "Nope!",
+      "Try again!"
+    ]
+
+    i > 0 ? text = positive : text = negative
+
+    feedback.innerText = text[Math.floor(Math.random() * text.length)]
   }
 
   // TODO: Is there a cleaner way to execute this?
