@@ -70,7 +70,7 @@ The [Unicode emoji list](https://unicode.org/emoji/charts/emoji-list.html) is a 
 - Error messaging
 - Continuous deployment
 - Is this game accessible?
-- Improve mobile rendering
+- Improve mobile rendering (portrait or landspace?)
 - Late night craving mode (dark mode)
 
 ## Bugs
