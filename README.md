@@ -72,6 +72,7 @@ The [Unicode emoji list](https://unicode.org/emoji/charts/emoji-list.html) is a 
 - Is this game accessible?
 - Improve mobile rendering (portrait or landspace?)
 - Late night craving mode (dark mode)
+- What if......you could easily share/Tweet your results and score after a game?
 
 ## Bugs
 
