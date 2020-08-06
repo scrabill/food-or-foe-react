@@ -12,7 +12,6 @@ export default function gameReducer(state = {
 }, action) {
   switch (action.type) {
     case "START_GAME":
-        console.log("The game has started")
         return {
           ...state,
           currentScore: 0,
@@ -20,28 +19,24 @@ export default function gameReducer(state = {
           activeGame: true
         }
     case "SAVE_SCORE":
-        console.log("Saving your score")
         return {
           ...state,
           playerName: action.name,
           currentScore: 0
         }
     case "LOADING_SCORES":
-        console.log("Loading scores")
         return {
           ...state,
           scores: state.scores,
           loadingScores: true
         }
     case "LOAD_SCORES":
-        console.log("Loading scores")
         return {
           ...state,
           scores: action.scores,
           loadingScores: false
         }
     case "UPDATE_SCORE":
-
       if (state.currentScore + action.point < 0) {
         state.currentScore = 0
       } else {
@@ -69,7 +64,6 @@ export default function gameReducer(state = {
           loadingFoodEmojis: true
         }
     case "LOAD_FOOD_EMOJIS":
-        console.log("Loading emojis")
         return {
           ...state,
           foodEmojis: action.foodEmojis,
@@ -81,7 +75,6 @@ export default function gameReducer(state = {
           currentEmoji: action.emoji
         }
     case "GUESS":
-        console.log("Calculating guess")
         return {
           ...state,
           scores: action.scores

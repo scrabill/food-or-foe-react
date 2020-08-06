@@ -31,15 +31,11 @@ export default class Button extends React.Component {
     feedback.innerText = text[Math.floor(Math.random() * text.length)]
   }
 
-  // TODO: Is there a cleaner way to execute this?
-
   makeAGuess(myGuess) {
 
     let i = 1
 
     let isFood = this.props.foodEmojis.includes(this.props.currentEmoji);
-
-    // console.log("The current emojis is " + this.props.currentEmoji + " I guessed that it is " + myGuess + ". It is " + isFood + " that it is food.")
 
     if (isFood === true) {
 
