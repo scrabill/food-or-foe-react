@@ -73,6 +73,8 @@ The [Unicode emoji list](https://unicode.org/emoji/charts/emoji-list.html) is a 
 - Improve mobile rendering (portrait or landspace?)
 - Late night craving mode (dark mode)
 - What if......you could easily share/Tweet your results and score after a game?
+- Refactor "Make a Guess" function
+- API URLs as global variables
 
 ## Bugs
 
