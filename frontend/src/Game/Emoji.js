@@ -16,11 +16,6 @@ class Emoji extends React.Component {
     this.props.fetchFoodEmojis()
   }
 
-  displayEmoji() {
-    console.log(this.props.currentEmoji)
-  }
-
-
   render() {
     return (
       <h1>{this.props.currentEmoji}</h1>
