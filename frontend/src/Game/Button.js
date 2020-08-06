@@ -6,8 +6,6 @@ export default class Button extends React.Component {
     this.props.startGame()
   }
 
-  // TODO: Is there a cleaner way to execute this?
-
   feedback = (i) => {
     let feedback = document.querySelector("#feedback")
     let text = ''
@@ -57,7 +55,6 @@ export default class Button extends React.Component {
     }
 
     this.feedback(i)
-    // Randomly get a new emoji and make it the currentEmoji
     this.props.updateEmoji(randomEmoji(this.props.emojis).character)
 
   }
@@ -75,7 +72,6 @@ export default class Button extends React.Component {
         this.makeAGuess(e.target.innerText);
         break;
       default:
-        // this.props.startGame();
         return
     }
   }

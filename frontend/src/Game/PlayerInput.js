@@ -6,7 +6,6 @@ export default class PlayerInput extends React.Component {
     playerName: ''
   }
 
-  // Update to store URL as a global variable
   createGame(gameObj) {
     fetch("http://localhost:3000/api/v1/games", {
       method: 'POST',
