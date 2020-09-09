@@ -28,6 +28,7 @@ gem 'rack-cors'
 
 # Use dotenv for environmental variables
 gem 'dotenv'
+gem 'dotenv-rails'
 
 # For making fake scores
 gem 'faker'
