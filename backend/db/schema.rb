@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_04_20_213616) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "emojis", force: :cascade do |t|
     t.string "slug"
     t.string "character"
