@@ -1,0 +1,60 @@
+:root {
+    --white: #FFFFFF;
+    --primary-color: #FD3C06;
+    --secondary-color: #444444;
+    --light-secondary-color: #808080;
+    --lightest-secondary-color: #D3D3D3;
+  }
+  
+  /* Global */
+  
+  body {
+    margin: 0 auto;
+    color: var(--secondary-color);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  /* Structure */
+  
+  nav, footer {
+    margin: 40px 0;
+  }
+
+  main {
+      width: 50vw;
+      margin: 20vh auto;
+      text-align: center;
+  }
+  
+  /* Fonts */
+  
+  h1 {
+    font-size: 100px;
+    line-height: 0;
+  }
+  
+  h2 {
+    color: var(--primary-color);
+  }
+  
+  /* Links */
+  
+  nav a {
+    margin-left: 20px;
+  }
+  
+  a, a:active, a:visited {
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  a.active {
+    border-bottom: 1px solid var(--primary-color);
+  }
+
+  @media screen AND (max-width: 500px) {
+    main {
+        width: 80vw;
+    }
+  }
