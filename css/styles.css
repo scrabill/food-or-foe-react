@@ -25,6 +25,13 @@
       margin: 20vh auto;
       text-align: center;
   }
+
+  section {
+    border: 2px solid var(--primary-color);
+    padding: 5vw;
+    width: 10vw auto;
+    background-color: var(--lightest-secondary-color04);
+  }
   
   /* Fonts */
   
@@ -35,6 +42,11 @@
   
   h2 {
     color: var(--primary-color);
+  }
+
+  .emoji {
+    font-size: 50px;
+    line-height: 0;
   }
   
   /* Links */
